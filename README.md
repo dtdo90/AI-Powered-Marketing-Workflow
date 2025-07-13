@@ -4,9 +4,10 @@ An intelligent marketing automation system that uses the Agent Communication Pro
 
 ## 🚀 Features
 
+- **ACP-Based Agent Architecture**: Uses Agent Communication Protocol to create specialized agents on different ACP servers for scalable, distributed AI workflows
+- **Multi-Agent Architecture with CrewAI**: Orchestrates multiple specialized agents using CrewAI framework for comprehensive marketing tasks
+- **SEO-Optimized Content Creation**: Generate engaging blog posts with built-in SEO optimization and content strategy
 - **Intelligent Marketing Planning**: Automated market research and strategy development
-- **SEO-Optimized Content Creation**: Generate engaging blog posts with built-in SEO optimization
-- **Multi-Agent Architecture**: Uses CrewAI with specialized agents for different marketing tasks
 - **Real-time Research**: Integrates with search tools for up-to-date market insights
 - **Output Management**: Automatically saves marketing plans and blog content to files
 
