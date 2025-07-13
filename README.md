@@ -45,10 +45,6 @@ The system consists of three main components:
    uv sync
    ```
 
-3. **Set up environment variables**:
-   ```bash
-   export GEMINI_API_KEY="your_gemini_api_key_here"
-   ```
 
 ## 🚀 Quick Start
 
