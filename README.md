@@ -42,7 +42,7 @@ The system consists of three main components:
 
 2. **Install dependencies**:
    ```bash
-   pip install -r requirements.txt
+   uv sync
    ```
 
 3. **Set up environment variables**:
@@ -55,15 +55,15 @@ The system consists of three main components:
 1. **Start the servers** (in separate terminals):
    ```bash
    # Terminal 1 - Start planner server
-   python planner_server.py
+   uv run planner_server.py
    
    # Terminal 2 - Start writer server
-   python writer_server.py
+   uv run writer_server.py
    ```
 
 2. **Run the marketing workflow**:
    ```bash
-   python chain.py
+   uv run chain.py
    ```
 
 ## 📖 Usage
@@ -73,7 +73,7 @@ The system consists of three main components:
 The system will use default settings for an AI startup. Simply run:
 
 ```bash
-python chain.py
+uv run chain.py
 ```
 
 ### Custom Company Context
