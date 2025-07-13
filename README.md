@@ -1,4 +1,4 @@
-# AI-Powered Marketing Workflow
+# Multi-Agent Marketing Workflow
 
 An intelligent marketing automation system that uses the Agent Communication Protocol (ACP) to create comprehensive marketing strategies and generate SEO-optimized content. This project combines multiple AI agents to deliver end-to-end marketing solutions.
 
@@ -45,6 +45,24 @@ The system consists of three main components:
    uv sync
    ```
 
+3. **Set up environment variables**:
+   
+   Create a `.env` file in the project root:
+   ```bash
+   touch .env
+   ```
+   
+   Add the following API keys to your `.env` file:
+   ```
+   GEMINI_API_KEY=your_gemini_api_key_here
+   SERPER_API_KEY=your_serper_api_key_here
+   OPENAI_API_KEY=your_openai_api_key_here
+   ```
+   
+   **Required API Keys:**
+   - **GEMINI_API_KEY**: Google AI Gemini API key for LLM operations
+   - **SERPER_API_KEY**: Serper API key for web search functionality
+   - **OPENAI_API_KEY**: OpenAI API key for additional LLM capabilities
 
 ## 🚀 Quick Start
 
