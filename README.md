@@ -9,7 +9,6 @@ An intelligent marketing system using **Agent Communication Protocol (ACP)** to 
 🤖 **Multi-Agent Orchestration** - ACP-powered distributed agents work together seamlessly  
 📊 **Intelligent Strategy Planning** - Data-driven market research and competitive analysis  
 🔄 **Automated Workflows** - End-to-end marketing pipeline without manual intervention  
-
 ✍️ **SEO-Optimized Content** - Professional blog posts and marketing materials  
 
 ## 🏗️ Architecture
