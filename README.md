@@ -48,7 +48,8 @@ An intelligent marketing system using **Agent Communication Protocol (ACP)** to 
    uv run writer_server.py
    
    # Terminal 3: Execute workflow
-   uv run chain.py
+   uv run chain.py (for simple chain run)
+   uv run acp_crew.py (for automated workflow)
    ```
 
 ## 🎯 Usage
