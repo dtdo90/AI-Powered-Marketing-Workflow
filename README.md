@@ -53,10 +53,13 @@ An intelligent marketing system using **Agent Communication Protocol (ACP)** to 
 
 ## 🎯 Usage
 
-**Default AI Startup Template:**
+**Manual chain run**
 ```bash
 uv run chain.py
 ```
+**Automated workflow**
+```bash
+uv run acp_crew.py
 
 **Custom Company Context:**
 ```python
