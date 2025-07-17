@@ -106,9 +106,6 @@ async def run_marketing_workflow(
             f.write(f"**Industry:** {context['industry']}\n\n")
             f.write(blog_content)
         
-        print(f"{Fore.GREEN}✅ Files saved:{Style.RESET_ALL}")
-        print(f"{Fore.GREEN}   Marketing Plan: {plan_filename}{Style.RESET_ALL}")
-        print(f"{Fore.GREEN}   Blog Post: {blog_filename}{Style.RESET_ALL}")
         
         return {
             "marketing_plan": marketing_plan,

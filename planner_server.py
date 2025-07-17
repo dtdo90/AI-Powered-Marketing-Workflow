@@ -145,18 +145,3 @@ async def marketing_planner(input: list[Message]) -> AsyncGenerator[RunYield, Ru
 
 if __name__ == "__main__":
     server.run(port=8000)
-    # import asyncio    
-    # async def main():
-        
-        
-    #     # Create proper input format - list of Messages
-    #     test_input = [
-    #         Message(parts=[MessagePart(content="We are an AI startup which specializes in advertisement. We use AI to automate marketing and help companies make their product reach customers as soon as possible.")])
-    #     ]
-        
-    #     # Call the marketing planner function
-    #     async for result in marketing_planner(test_input):
-    #         print(result.parts[0].content)
-    
-    # # Run the async main function
-    # asyncio.run(main())
