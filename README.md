@@ -60,7 +60,7 @@ uv run chain.py
 **Automated workflow**
 ```bash
 uv run acp_crew.py
-
+```
 **Custom Company Context:**
 ```python
 company_context = {
