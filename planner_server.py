@@ -7,8 +7,6 @@ import nest_asyncio
 from dotenv import load_dotenv
 import os
 import logging
-import requests
-from typing import Dict, Any
 
 nest_asyncio.apply()
 

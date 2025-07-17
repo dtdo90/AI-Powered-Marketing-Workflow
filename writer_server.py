@@ -6,14 +6,9 @@ from crewai_tools import SerperDevTool, WebsiteSearchTool
 import nest_asyncio
 from dotenv import load_dotenv
 import os
-import logging
-import re
 
 nest_asyncio.apply()
 
-# Configure logging
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
 
 # Initialize a server
 server = Server()
@@ -21,9 +16,6 @@ server = Server()
 # Load environment variables
 load_dotenv()
 gemini_api_key = os.getenv("GEMINI_API_KEY")
-
-if not gemini_api_key:
-    logger.warning("GEMINI_API_KEY not found in environment variables. Using empty string.")
 
 MODEL = "gemini/gemini-2.0-flash"
 llm = LLM(
@@ -40,9 +32,7 @@ async def blog_writer(input: list[Message]) -> AsyncGenerator[RunYield, RunYield
     Expert content writer agent that creates SEO-optimized, engaging blog posts.
     Specializes in tech and marketing content with strong conversion optimization.
     """
- 
-    logger.info("Starting blog content creation process...")
-    
+     
     content_writer = Agent(
         role="Senior Content Marketing Specialist",
         goal="Create high-converting, SEO-optimized blog posts that drive engagement and conversions",
@@ -80,7 +70,6 @@ async def blog_writer(input: list[Message]) -> AsyncGenerator[RunYield, RunYield
         agent=content_writer
     )
     
-    logger.info("Creating crew and executing task...")
     crew = Crew(
         agents=[content_writer], 
         tasks=[task], 
@@ -96,9 +85,7 @@ async def supervisor_agent(input: list[Message]) -> AsyncGenerator[RunYield, Run
     Supervisor agent that takes blog content and converts it to ready-to-use format.
     Removes meta-instructions, SEO considerations, and formatting guidelines.
     """
-    
-    logger.info("Starting content supervision and cleanup process...")
-    
+        
     supervisor = Agent(
         role="Content Editor and Publisher",
         goal="Transform raw blog content into clean, ready-to-publish format",
@@ -149,7 +136,6 @@ async def supervisor_agent(input: list[Message]) -> AsyncGenerator[RunYield, Run
         agent=supervisor
     )
     
-    logger.info("Creating supervisor crew and executing cleanup task...")
     crew = Crew(
         agents=[supervisor], 
         tasks=[task], 

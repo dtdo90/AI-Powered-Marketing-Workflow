@@ -1,3 +1,6 @@
 .env
 marketing_outputs/*
+sandbox/*
 __pycache__/*
+db/*
+marketing_outputs/*

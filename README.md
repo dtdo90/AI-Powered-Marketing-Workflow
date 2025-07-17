@@ -1,162 +1,104 @@
 # Multi-Agent Marketing Workflow
 
-An intelligent marketing automation system that uses the Agent Communication Protocol (ACP) to create comprehensive marketing strategies and generate SEO-optimized content. This project combines multiple AI agents to deliver end-to-end marketing solutions.
+> **AI-powered marketing automation that thinks, plans, and creates like a full marketing team**
 
-## 🚀 Features
+An intelligent marketing system using **Agent Communication Protocol (ACP)** to orchestrate specialized AI agents that deliver comprehensive marketing strategies and SEO-optimized content automatically.
 
-- **ACP-Based Agent Architecture**: Uses Agent Communication Protocol to create specialized agents on different ACP servers for scalable, distributed AI workflows
-- **Multi-Agent Architecture with CrewAI**: Orchestrates multiple specialized agents using CrewAI framework for comprehensive marketing tasks
-- **SEO-Optimized Content Creation**: Generate engaging blog posts with built-in SEO optimization and content strategy
-- **Intelligent Marketing Planning**: Automated market research and strategy development
-- **Real-time Research**: Integrates with search tools for up-to-date market insights
-- **Output Management**: Automatically saves marketing plans and blog content to files
+## ✨ Key Features
+
+🤖 **Multi-Agent Orchestration** - ACP-powered distributed agents work together seamlessly  
+📊 **Intelligent Strategy Planning** - Data-driven market research and competitive analysis  
+🔄 **Automated Workflows** - End-to-end marketing pipeline without manual intervention  
+
+✍️ **SEO-Optimized Content** - Professional blog posts and marketing materials  
 
 ## 🏗️ Architecture
 
-The system consists of three main components:
+**3-Layer System:**
+- **🧠 Planner Server** (Port 8000): Market research & strategy development
+- **✍️ Writer Server** (Port 8001): SEO-optimized content creation  
+- **🎯 Orchestrator**: Intelligent task delegation and workflow management
 
-1. **Planner Server** (`planner_server.py`): Handles market research and strategy development
-2. **Writer Server** (`writer_server.py`): Creates SEO-optimized blog content
-3. **Main Chain** (`chain.py`): Orchestrates the complete workflow
+**Specialized AI Agents:**
+- Market Research Analyst
+- Marketing Strategy Consultant  
+- Content Marketing Specialist
+- Content Editor
 
-### Agent Roles
+## ⚡ Quick Start
 
-- **Market Research Analyst**: Conducts comprehensive market research and competitive analysis
-- **Marketing Strategy Consultant**: Develops strategic marketing plans
-- **Content Marketing Specialist**: Creates engaging, SEO-optimized blog posts
-- **Content Editor**: Cleans and formats content for publication
-
-## 📋 Prerequisites
-
-- Python 3.10+
-- Gemini API key (Google AI)
-- Internet connection for research tools
-
-## 🛠️ Installation
-
-1. **Clone the repository**:
+1. **Setup**:
    ```bash
-   git clone <repository-url>
-   cd acp_marketing
-   ```
-
-2. **Install dependencies**:
-   ```bash
+   git clone <repository-url> && cd acp_marketing
    uv sync
    ```
 
-3. **Set up environment variables**:
-   
-   Create a `.env` file in the project root:
-   ```bash
-   touch .env
+2. **Configure API keys** in `.env`:
+   ```env
+   GEMINI_API_KEY=your_gemini_api_key
+   SERPER_API_KEY=your_serper_api_key  
+   OPENAI_API_KEY=your_openai_api_key # put a dummy key for SerperDevTool
    ```
-   
-   Add the following API keys to your `.env` file:
-   ```
-   GEMINI_API_KEY=your_gemini_api_key_here
-   SERPER_API_KEY=your_serper_api_key_here
-   OPENAI_API_KEY=your_openai_api_key_here
-   ```
-   
-   **Required API Keys:**
-   - **GEMINI_API_KEY**: Google AI Gemini API key for LLM operations
-   - **SERPER_API_KEY**: Serper API key for web search functionality
-   - **OPENAI_API_KEY**: OpenAI API key for additional LLM capabilities
 
-## 🚀 Quick Start
-
-1. **Start the servers** (in separate terminals):
+3. **Launch** (3 terminals):
    ```bash
-   # Terminal 1 - Start planner server
+   # Terminal 1: Planner
    uv run planner_server.py
    
-   # Terminal 2 - Start writer server
+   # Terminal 2: Writer  
    uv run writer_server.py
-   ```
-
-2. **Run the marketing workflow**:
-   ```bash
+   
+   # Terminal 3: Execute workflow
    uv run chain.py
    ```
 
-## 📖 Usage
+## 🎯 Usage
 
-### Basic Usage
-
-The system will use default settings for an AI startup. Simply run:
-
+**Default AI Startup Template:**
 ```bash
 uv run chain.py
 ```
 
-### Custom Company Context
-
-You can customize the company context by modifying the `company_context` in `chain.py`:
-
+**Custom Company Context:**
 ```python
 company_context = {
-    "company_type": "Your Company Type",
-    "industry": "Your Industry",
-    "target_audience": "Your Target Audience",
-    "value_proposition": "Your Value Proposition",
-    "key_benefits": ["Benefit 1", "Benefit 2", "Benefit 3"]
+    "company_type": "SaaS Platform",
+    "industry": "FinTech", 
+    "target_audience": "Financial professionals",
+    "value_proposition": "Automated financial reporting",
+    "key_benefits": ["Real-time analytics", "Compliance automation"]
 }
 ```
 
-### Specific Marketing Requests
+## 📊 Output
 
-You can also provide specific marketing requests:
+**Generated in `marketing_outputs/`:**
 
-```python
-specific_request = "Create a social media marketing strategy for Q4"
-```
 
-## 📁 Output Structure
-
-The system generates two main outputs in the `marketing_outputs/` directory:
-
-- `marketing_plan.md`: Comprehensive marketing strategy document
-- `blog_post.md`: SEO-optimized blog content
-
-### Marketing Plan Includes:
-- Executive Summary
-- Market Analysis
-- Target Audience Analysis
-- Marketing Strategy Overview
-- Channel-Specific Tactics
-- Implementation Timeline
-- Budget Allocation
-- Success Metrics & KPIs
-- Risk Assessment
-
-### Blog Post Features:
-- SEO-optimized headlines
-- Engaging introductions
-- Well-structured content
-- Actionable insights
-- Strong calls-to-action
-- Natural keyword integration
+📝 **`blog_post.md`** - Publication-ready content
+- SEO-optimized headlines & structure
+- Engaging copy with CTAs
+- Strategic keyword integration
 
 ## 🔧 API Endpoints
 
-### Planner Server (Port 8000)
-- `marketing_planner`: Generates comprehensive marketing strategies
+| Server | Port | Endpoint | Function |
+|--------|------|----------|----------|
+| Planner | 8000 | `marketing_planner` | Strategy generation |
+| Writer | 8001 | `blog_writer` | Content creation |
+| Writer | 8001 | `supervisor_agent` | Content optimization |
 
-### Writer Server (Port 8001)
-- `blog_writer`: Creates SEO-optimized blog content
-- `supervisor_agent`: Cleans and formats content for publication
-
-## 🛠️ Project Structure
+## 📁 Project Structure
 ```
 acp_marketing/
-├── chain.py              # Main workflow orchestration
-├── planner_server.py     # Marketing planning server
-├── writer_server.py      # Content creation server
-├── requirements.txt     # Python dependencies
-├── marketing_outputs/   # Generated content
-│   ├── marketing_plan.md
-│   └── blog_post.md
-└── README.md
+├── 🎯 chain.py              # Main orchestrator
+├── 🧠 planner_server.py     # Strategy server  
+├── ✍️ writer_server.py      # Content server
+├── 📦 requirements.txt      # Dependencies
+├── 📊 marketing_outputs/    # Generated content
+└── 📖 README.md
 ```
+
+---
+*Transform your marketing workflow with AI agents that work 24/7* 🌟
 
